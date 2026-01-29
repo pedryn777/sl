@@ -1,0 +1,167 @@
+:root {
+  --azul: #0b3c6f;
+  --cinza-claro: #f6f8fb;
+  --texto: #1f2937;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #ffffff;
+  color: var(--texto);
+  line-height: 1.9;
+}
+
+/* Animações */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 0.9s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: none;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  background:
+    linear-gradient(rgba(10,40,90,0.55), rgba(10,40,90,0.55)),
+    url("img/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: white;
+}
+
+.hero-content p {
+  color: #e5e7eb;
+  margin: 20px 0 35px;
+  font-size: 1.15rem;
+}
+
+/* BOTÕES */
+.btn-primary,
+.btn-dark {
+  padding: 16px 36px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--azul);
+}
+
+.btn-dark {
+  background: var(--azul);
+  color: white;
+}
+
+/* BIO */
+.bio {
+  max-width: 900px;
+  margin: auto;
+  padding: 110px 20px;
+}
+
+.bio h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  margin-bottom: 35px;
+  color: var(--azul);
+}
+
+.bio p {
+  margin-bottom: 25px;
+}
+
+/* GALERIA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 18px;
+}
+
+/* ESPECIALIDADES */
+.especialidades {
+  background: var(--cinza-claro);
+  padding: 110px 20px;
+  text-align: center;
+}
+
+.especialidades h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+}
+
+.lista-especialidades {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  gap: 30px;
+}
+
+.lista-especialidades h3 {
+  color: var(--azul);
+  margin-bottom: 10px;
+}
+
+/* CTA */
+.cta {
+  background: var(--azul);
+  color: white;
+  text-align: center;
+  padding: 110px 20px;
+}
+
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+/* FOOTER */
+footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .bio {
+    padding: 80px 20px;
+  }
+}
