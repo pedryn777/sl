@@ -1,214 +1,91 @@
-:root {
-  --primaria: #c9b2a6;        /* rosé sofisticado */
-  --primaria-escura: #a89186;
-  --fundo: #faf8f6;
-  --texto: #3f3a36;
-  --branco: #ffffff;
-}
-
-/* RESET */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* FONTE GLOBAL */
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--fundo);
-  color: var(--texto);
-  line-height: 1.9;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+               'Helvetica Neue', sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+  line-height: 1.6;
 }
 
-/* ANIMAÇÕES SUAVES */
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: 0.9s ease;
-}
-.reveal.active {
-  opacity: 1;
-  transform: none;
+/* TÍTULOS – ESTILO FRAMER / SAAS PREMIUM */
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #1a1a1a;
 }
 
-/* HERO */
-.hero {
-  height: 90vh;
-  background:
-    linear-gradient(
-      rgba(120, 95, 80, 0.55),
-      rgba(120, 95, 80, 0.55)
-    ),
-    url("img/hero.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+h2 {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #1f1f1f;
 }
 
-.hero-content {
-  max-width: 700px;
-  padding: 20px;
+h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.hero-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: var(--branco);
-  font-weight: 500;
+/* TEXTOS */
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #444;
 }
 
-.hero-content p {
-  margin: 25px 0 40px;
-  font-size: 1.15rem;
-  color: #f1efed;
+p.lead {
+  font-size: 1.05rem;
+  color: #555;
 }
 
 /* BOTÕES */
-.btn-primary,
-.btn-dark {
-  display: inline-block;
-  padding: 16px 38px;
-  border-radius: 40px;
-  text-decoration: none;
+button,
+.btn,
+a.btn {
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
-  transition: 0.3s ease;
+  letter-spacing: -0.01em;
 }
 
-.btn-primary {
-  background: var(--primaria);
-  color: var(--branco);
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.btn-primary:hover {
-  background: var(--primaria-escura);
+/* SEÇÕES (MANTÉM ELEGÂNCIA NO MOBILE) */
+section {
+  padding: 4rem 1.5rem;
 }
 
-.btn-dark {
-  background: var(--primaria-escura);
-  color: var(--branco);
-}
-
-/* BIO */
-.bio {
-  max-width: 900px;
-  margin: -80px auto 0;
-  padding: 110px 40px;
-  background: var(--branco);
-  border-radius: 40px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-}
-
-.bio h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 35px;
-  color: var(--primaria-escura);
-  text-align: center;
-}
-
-.bio p {
-  margin-bottom: 28px;
-  font-size: 1.02rem;
-}
-
-/* GALERIA */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.galeria img {
-  width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
-}
-
-/* ESPECIALIDADES */
-.especialidades {
-  background: var(--fundo);
-  padding: 120px 20px;
-  text-align: center;
-}
-
-.especialidades h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 60px;
-  color: var(--primaria-escura);
-}
-
-.lista-especialidades {
-  max-width: 1000px;
-  margin: auto;
-  display: grid;
-  gap: 30px;
-}
-
-.lista-especialidades div {
-  background: var(--branco);
-  padding: 35px;
-  border-radius: 26px;
-  box-shadow: 0 20px 45px rgba(0,0,0,0.08);
-}
-
-.lista-especialidades h3 {
-  margin-bottom: 12px;
-  color: var(--primaria-escura);
-}
-
-/* CTA FINAL */
-.cta {
-  background: linear-gradient(
-    135deg,
-    var(--primaria),
-    var(--primaria-escura)
-  );
-  color: var(--branco);
-  text-align: center;
-  padding: 120px 20px;
-}
-
-.cta h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 25px;
-}
-
-.cta p {
-  max-width: 620px;
-  margin: auto;
-  margin-bottom: 40px;
-  font-size: 1.05rem;
-}
-
-/* FOOTER */
-footer {
-  padding: 35px;
-  text-align: center;
-  font-size: 14px;
-  color: #7a6f69;
-  background: var(--fundo);
-}
-
-/* MOBILE */
+/* MOBILE FIRST – AJUSTE FINO */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
+  h1 {
+    font-size: 2.1rem;
   }
 
-  .bio {
-    margin-top: -40px;
-    padding: 80px 25px;
+  h2 {
+    font-size: 1.5rem;
   }
 
-  .especialidades,
-  .cta {
-    padding: 90px 20px;
+  p {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 3rem 1.2rem;
   }
 }
-
